@@ -8,6 +8,7 @@ $(function(){
   const close = $('#close');
   // メニューバーをクリックして表示させる処理
   $('#open').on('click' , () => {
+    $('.overlay').show();
     $('.overlay').addClass('show');
     $('.open').addClass('hide');
   });
@@ -16,6 +17,12 @@ $(function(){
   $('#close').on('click' , () => {
     $('.overlay').removeClass('show');
     $('.open').removeClass('hide');
+  });
+  
+  // ハンバーガーメニュー中にリンクをクリックした時に、ハンバーガーメニューを閉じる処理
+  $('.overlay a').on('click', () => {
+    $('.overlay').removeClass('show');
+    $('.overlay').hide();
   });
   
   // 福岡の街並みの画像アニメーション(slider)
